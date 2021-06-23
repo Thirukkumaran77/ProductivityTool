@@ -22,16 +22,20 @@ const Todo = ({
           <br />
           <Add onAdd={onAdd} />
         </div>
-        <List
-          tasks={tasks}
-          onPop={onPop}
-          setPomodoro={setPomodoro}
-          myClass={myClass}
-          setMyClass={setMyClass}
-          setId={setId}
-          taskOnPomodoro={taskOnPomodoro}
-          onEndTask={onEndTask}
-        />
+        {tasks == 0 ? (
+          <p className="grey">add something to make magic</p>
+        ) : (
+          <List
+            tasks={tasks}
+            onPop={onPop}
+            setPomodoro={setPomodoro}
+            myClass={myClass}
+            setMyClass={setMyClass}
+            setId={setId}
+            taskOnPomodoro={taskOnPomodoro}
+            onEndTask={onEndTask}
+          />
+        )}
       </div>
     </>
   );

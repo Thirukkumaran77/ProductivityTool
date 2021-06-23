@@ -12,19 +12,21 @@ const List = ({
   return (
     <>
       <div className="scroll">
-        {tasks.map((task) => (
-          <Task
-            key={task.id}
-            onPop={onPop}
-            task={task}
-            setPomodoro={setPomodoro}
-            myClass={myClass}
-            setMyClass={setMyClass}
-            setId={setId}
-            taskOnPomodoro={taskOnPomodoro}
-            onEndTask={onEndTask}
-          />
-        ))}
+        {tasks
+          .map((task) => (
+            <Task
+              key={task.id}
+              onPop={onPop}
+              task={task}
+              setPomodoro={setPomodoro}
+              myClass={myClass}
+              setMyClass={setMyClass}
+              setId={setId}
+              taskOnPomodoro={taskOnPomodoro}
+              onEndTask={onEndTask}
+            />
+          ))
+          .reverse()}
       </div>
     </>
   );
